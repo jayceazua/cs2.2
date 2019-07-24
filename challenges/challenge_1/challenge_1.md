@@ -37,3 +37,7 @@ Edge List:
 ### Challenge 1 Rubrics
 [Challenge Rubric Online - Beta Testing](https://www.makeschool.com/rubrics/UnVicmljLTQ=)
 or [Challenge Rubric Document](https://docs.google.com/document/d/1mRnSLMeuHLODGGxVI1-0AsTS7lqjNiemZCO9fo1gUzg/edit?usp=sharing)
+
+
+### Attribution:
+1. Got help from Nathan and Jake to help me understand better Graph theory, also used the resources avail to understand a little more.
