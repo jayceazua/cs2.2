@@ -47,7 +47,8 @@ class Graph:
                 # add it - or return an error (choice is up to you).
             raise ValueError("something went wrong...")
         else:
-            self.vert_dict[fromVert].add_neighbor(self.vert_dict[toVert], weight)
+            self.vert_dict[fromVert].add_neighbor(
+                self.vert_dict[toVert], weight)
 
     def getVertex(self, vertKey):
         """finds the vertex in the graph named vertKey."""
@@ -59,6 +60,13 @@ class Graph:
     def getVertices(self):
         """returns the list of all vertices in the graph."""
         return self.vert_dict.keys()
+
+    def getAllEdges(self):
+        """Return number of all edges in the graph"""
+        sum = 0
+        for vert in self:
+            sum += vert.getEdges()
+        return sum
 
 
 # Attribution:
