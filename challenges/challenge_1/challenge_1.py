@@ -19,7 +19,6 @@ def parse_edge(edge):
     new_edge = []
 
     edge = edge.split(',')
-    # print("edge:",edge)
 
     for edge_info in edge:
 
@@ -31,7 +30,6 @@ def parse_edge(edge):
 
         new_edge.append(int(curr_edge))
 
-    # print("New_edge:", edge)
     return new_edge
 
 
