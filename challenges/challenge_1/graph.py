@@ -41,14 +41,13 @@ class Graph:
         # return the new vertex
         return new_vertex
 
-    def addEdgeWithWeight(self, fromVert, toVert, weight):
+    def addEdgeWithWeight(self, fromVert, toVert, weight=0):
         """Adds a new, weighted, directed edge to the graph that connects two vertices."""
-           if fromVert not in self.vert_dict or toVert not in self.vert_dict:
+        if fromVert not in self.vert_dict or toVert not in self.vert_dict:
                 # add it - or return an error (choice is up to you).
-                raise ValueError("something went wrong...")
-            else:
-                self.vert_dict[fromVert].add_neighbor(self.vert_dict[toVert], weight)
-
+            raise ValueError("something went wrong...")
+        else:
+            self.vert_dict[fromVert].add_neighbor(self.vert_dict[toVert], weight)
 
     def getVertex(self, vertKey):
         """finds the vertex in the graph named vertKey."""
@@ -62,8 +61,7 @@ class Graph:
         return self.vert_dict.keys()
 
 
-
 # Attribution:
 # Pair Programming session and study session with:
 # 1. Nathan
-# 2. Jake 
+# 2. Jake
