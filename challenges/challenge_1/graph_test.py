@@ -11,4 +11,11 @@ class VertexTest(unittest.TestCase):
 
 
 class GraphTest(unittest.TestCase):
-    pass
+    def test_init(self):
+        pass
+
+    def test_add_vertex(self):
+        pass
+
+    def test_add_edge(self):
+        pass
