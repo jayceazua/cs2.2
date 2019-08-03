@@ -47,7 +47,7 @@ class Graph:
                 # add it - or return an error (choice is up to you).
             raise ValueError("something went wrong...")
         else:
-            self.vert_dict[fromVert].add_neighbor(
+            self.vert_dict[fromVert].addNeighbor(
                 self.vert_dict[toVert], weight)
 
     def getVertex(self, vertKey):
