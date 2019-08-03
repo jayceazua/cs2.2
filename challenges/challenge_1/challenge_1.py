@@ -64,7 +64,8 @@ def construct_graph(filename):
 def grab_graph_info(graph, filename):
     """ Return Tuple object with number of vertices, number of edges, and the Edge List"""
 
-    edge_list = open(filename, 'r').read().split("\n")[2:-1]
+    edge_list = open(filename, 'r').read().split("\n")[2:]
+    # print("edges:", edge_list)
     num_of_edges = len(edge_list)
 
     return [graph.num_vertices, num_of_edges, edge_list]
@@ -74,6 +75,7 @@ if __name__ == "__main__":
 
     graph = construct_graph(sys.argv[1])
     graph_info = grab_graph_info(graph, sys.argv[1])
+    # print("WTF: ", graph_info)
 
     print("Vertices:", graph_info[0])
     print("Edges:", graph_info[1])
