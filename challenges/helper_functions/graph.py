@@ -1,4 +1,6 @@
 from vertex import Vertex
+# used for BFS will switch to a priority queue later
+from collections import deque
 
 
 class Graph:
