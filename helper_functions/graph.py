@@ -72,5 +72,8 @@ class Graph:
                               self.vert_list.values())
         return sum(neighbor_counts)
 
+    # Breadth-First Search
+    # Depth-First Search
+
 
 # Attribution: Meredith challenge 1 solution used the iter method
