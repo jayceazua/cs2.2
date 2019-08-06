@@ -30,11 +30,14 @@ def read_from_file(filename):
         if 2 > len(new_edge) > 3:
             raise Exception("Invalid edge")
 
-           # Get vertices
+        # Get vertices
         v, u = new_edge[:2]
 
         # Get weight
-        weight = int(new_edge[2]) if len(new_edge) == 3 else None
+        if len(new_edge) == 3:
+            weight = int(new_edge[2])
+        else:
+            weight = None
 
         # Add edge/s
         g.add_edge(v, u, weight)
