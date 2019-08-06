@@ -7,7 +7,7 @@ class Graph:
         # Graph property Order means the number of vertices
         self.order = 0
         # number of edges
-        # self.size = 0
+        self.size = 0
         self.DEFAULT_WEIGHT = 1
 
     def __iter__(self):
@@ -29,7 +29,7 @@ class Graph:
 
     # add edge
     def add_edge(self, v, u, weight=None):
-        # self.size += 1
+        self.size += 1
 
         if weight == None:
             weight = self.DEFAULT_WEIGHT

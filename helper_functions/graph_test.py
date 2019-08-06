@@ -28,8 +28,8 @@ class GraphTest(unittest.TestCase):
 
         assert g.get_order() == 5
         assert g.get_size() == 3
+        assert g.get_size() == g.size
 
 
 if __name__ == "__main__":
     unittest.main()
-
