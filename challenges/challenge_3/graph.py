@@ -138,6 +138,7 @@ class Graph:
     def i_depth_first_search(self, from_v, to_u):
         """ Depth-first search iteratively """
         # Start with a vertex v
+        visited = {from_v}
         # Let S be a stack
         stack = deque()
         # S.push(v)
@@ -149,9 +150,13 @@ class Graph:
             # Print v
             print(vertex)
             # if v is not labeled as discovered:
+            if vertex in visited:
             #     label v as discovered
+                visited.add(vertex)
             #     for each edge from v to w:
+                for u in self.get_vertex(vertex).neighbors:
             #       S.push(w)
+                    stack.appendleft(u)
 
         pass
     
