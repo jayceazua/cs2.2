@@ -117,11 +117,47 @@ class Graph:
                     queue.append(u)
         return None
     
-    
-    
-
-
 # Challenge 3
     # Depth-First Search
+    # DFS(G, v)
+    def r_depth_first_search(self, from_v, to_u, visited=None):
+        """ Depth-frist search recursively """
+    # label v as visited
+        if visited == None:
+            visited = {from_v}
+        # for each edge from v to w:
+        for u in self.get_vertex(from_v).neighbors:
+        #     if vertex w is not visited
+            if u == to_u:
+                return True
+            else:
+                #     recursively call DFS(G,w)
+                visited.add(u)
+                return self.r_depth_first_search(u, to_u, visited)
+    
+    def i_depth_first_search(self, from_v, to_u):
+        """ Depth-first search iteratively """
+        # Start with a vertex v
+        # Let S be a stack
+        stack = deque()
+        # S.push(v)
+        stack.appendleft(from_v)
+        # while S is not empty:
+        while len(stack) != 0:
+            # v = S.pop()
+            vertex = stack.popleft()
+            # Print v
+            print(vertex)
+            # if v is not labeled as discovered:
+            #     label v as discovered
+            #     for each edge from v to w:
+            #       S.push(w)
 
-# Attribution: Meredith challenge 1 solution used the iter method
+        pass
+    
+
+
+
+
+
+# Attribution: Meredith challenge 1 solution used the iter method, also used the slides pseudocode
