@@ -157,6 +157,12 @@ class Graph:
                 for u in self.get_vertex(vertex).neighbors:
             #       S.push(w)
                     stack.appendleft(u)
+
+
+# Challenge 3: Stretch Challenge
+# Implement BinaryMinHeap using a dynamic array and then implement Priory Queue using BinaryMinHeap.
+
+# Challenge 4
     
 
 
