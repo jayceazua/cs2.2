@@ -100,8 +100,8 @@ class Graph:
     def shortest_path(self, from_v, to_u):
         # Start with an arbitrary vertex v, mark v visited, add v to queue
         visited = {from_v: [from_v]}
-        queue = deque([from_v])
-
+        queue = deque(from_v)
+        print("wtf is this: ", self.get_vertex(from_v))
         # For each vertex v in queue
         while len(queue) != 0:
             # Remove v from queue
