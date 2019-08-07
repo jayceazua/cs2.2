@@ -1,13 +1,10 @@
-from .graph import Graph
-# import sys
-# sys.path.append('../')
+from graph import Graph
 
-
-def read_from_file(filename):
+def read_from_file(file_name):
     """
     This functions reads from a filename given and returns a graph object.
     """
-    file = open(filename, "r")
+    file = open(file_name, "r")
     lines = file.readlines()
     file.close()
 
@@ -49,4 +46,8 @@ def read_from_file(filename):
 
     return g
 
+
+if __name__ == "__main__":
+    read_from_file(
+        "/Users/giru/Desktop/cs_2-2/challenges/challenge_2/graph_data.txt")
 # Attribution: Challenge 1 solution Meredith and Jake Shams

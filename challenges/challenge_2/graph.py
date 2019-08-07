@@ -1,4 +1,4 @@
-from .vertex import Vertex
+from vertex import Vertex
 # used for BFS will switch to a priority queue later
 from collections import deque
 
@@ -68,13 +68,20 @@ class Graph:
                 edges.append((v.id, u.id, v.neighbors[u]))
         return edges
 
-    # get size
+    # get size - Meredith: might not need this above I got the size of the Graph by simply adding a property
     def get_size(self):
         neighbor_counts = map(lambda v: len(v.neighbors),
                               self.vert_list.values())
         return sum(neighbor_counts)
 
+# Challenge 2
     # Breadth-First Search
+    def breadth_first_search(self, start):
+        
+    # shortest_path
+    # size_shortest_path
+
+# Challenge 3
     # Depth-First Search
 
 # Attribution: Meredith challenge 1 solution used the iter method
