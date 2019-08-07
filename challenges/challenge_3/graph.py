@@ -157,8 +157,6 @@ class Graph:
                 for u in self.get_vertex(vertex).neighbors:
             #       S.push(w)
                     stack.appendleft(u)
-
-        pass
     
 
 
