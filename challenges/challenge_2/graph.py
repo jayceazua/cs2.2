@@ -76,9 +76,48 @@ class Graph:
 
 # Challenge 2
     # Breadth-First Search
-    def breadth_first_search(self, start):
-        
+    def breadth_first_search(self, vertex):
+        # Start with an arbitrary vertex
+            # mark as visited and add to queue
+        visited = {vertex}
+        queue = deque([vertex])
+        # For each vertex v in queue
+        while len(queue) != 0:
+            # Remove v from the queue
+            vertex_key = queue.popleft()
+            # For each vertex u adjacent to v
+            for u in self.get_vertex(vertex_key).neighbors:
+                # If u has not been visited
+                if u not in visited:
+                    # Set parent of u to v
+                    # Mark u as visited
+                    visited.add(u)
+                    # Add u to the queue
+                    queue.append(u)
+        return list(visited)
+
     # shortest_path
+    def shortest_path(self, from_v, to_u):
+        # Start with an arbitrary vertex v, mark v visited, add v to queue
+        visited = {from_v: [from_v]}
+        queue = deque([from_v])
+
+        # For each vertex v in queue
+        while len(queue) != 0:
+            # Remove v from queue
+            vertex_key = queue.popleft()
+            for u in self.get_vertex(vertex_key).neighbors:
+                if u not in visited:
+                    visited[u] = visited[vertex_key] + [u]
+                    if u == to_u:
+                        # print(seen[neighbor])
+                        return visited[u]
+                    queue.append(u)
+        return None
+    # For each vertex u adjacent to v
+    # If u has not been visited
+    # Set parent of u to v, mark u visited, add u to queue
+
     # size_shortest_path
 
 # Challenge 3
