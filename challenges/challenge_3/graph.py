@@ -10,6 +10,8 @@ class Graph:
         self.order = 0
         # number of edges
         self.size = 0
+        # RDFS
+        self.dfs_path = None
         self.DEFAULT_WEIGHT = 1
 
     def __iter__(self):
@@ -116,7 +118,7 @@ class Graph:
                         return visited[u]
                     queue.append(u)
         return None
-    
+
 # Challenge 3
     # Depth-First Search
     # DFS(G, v)
@@ -127,14 +129,15 @@ class Graph:
             visited = {from_v}
         # for each edge from v to w:
         for u in self.get_vertex(from_v).neighbors:
-        #     if vertex w is not visited
+            #     if vertex w is not visited
             if u == to_u:
+                self.dfs_path = (visited)
                 return True
             else:
                 #     recursively call DFS(G,w)
                 visited.add(u)
                 return self.r_depth_first_search(u, to_u, visited)
-    
+
     def i_depth_first_search(self, from_v, to_u):
         """ Depth-first search iteratively """
         # Start with a vertex v
@@ -151,11 +154,11 @@ class Graph:
             print(vertex)
             # if v is not labeled as discovered:
             if vertex in visited:
-            #     label v as discovered
+                #     label v as discovered
                 visited.add(vertex)
             #     for each edge from v to w:
                 for u in self.get_vertex(vertex).neighbors:
-            #       S.push(w)
+                    #       S.push(w)
                     stack.appendleft(u)
 
 
@@ -163,10 +166,6 @@ class Graph:
 # Implement BinaryMinHeap using a dynamic array and then implement Priory Queue using BinaryMinHeap.
 
 # Challenge 4
-    
-
-
-
 
 
 # Attribution: Meredith challenge 1 solution used the iter method, also used the slides pseudocode
