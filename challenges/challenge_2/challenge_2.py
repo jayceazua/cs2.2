@@ -6,9 +6,9 @@ if __name__ == "__main__":
     file_name = sys.argv[1]
     g = read_from_file(file_name)
     from_v = sys.argv[2]
-    # print("From:", from_v)
+    print("From:", from_v)
     to_u = sys.argv[3]
-    # print("To:", to_u)
+    print("To:", to_u)
     shortest_path = g.shortest_path(from_v, to_u)
     print(f'Vertices in shortest path: {", ".join(shortest_path)}')
     print(f'Number of edges in shortest path: {len(shortest_path) - 1}')

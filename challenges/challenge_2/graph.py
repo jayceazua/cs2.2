@@ -113,7 +113,6 @@ class Graph:
                     # Set parent of u to v, mark u visited, add u to queue
                     visited[u] = visited[vertex_key] + [u]
                     if u == to_u:
-                        # print(seen[neighbor])
                         return visited[u]
                     queue.append(u)
         return None
