@@ -125,19 +125,28 @@ class Graph:
 
     def r_depth_first_search(self, from_v, to_u, visited=None):
         """ Depth-frist search recursively """
+        # Need help debugging this...
+        print("From", from_v)
+        print("To", to_u)
     # label v as visited
         if visited == None:
             visited = {from_v}
         # for each edge from v to w:
+        # print(from_v)
         for u in self.get_vertex(from_v).neighbors:
             #     if vertex w is not visited
             if u.id == to_u:
-                self.dfs_path = (visited)
+                self.dfs_path = ([visited])
                 return True
             else:
                 #     recursively call DFS(G,w)
-                visited.add(u)
-                return self.r_depth_first_search(u, to_u, visited)
+                visited.add(u.id)
+                return self.r_depth_first_search(u.id, to_u, visited)
+
+
+  
+
+
 
     def i_depth_first_search(self, from_v, to_u):
         """ Depth-first search iteratively """
@@ -154,13 +163,14 @@ class Graph:
             # Print v
             print(vertex)
             # if v is not labeled as discovered:
-            if vertex in visited:
+            if vertex not in visited:
                 #     label v as discovered
                 visited.add(vertex)
             #     for each edge from v to w:
-                for u in self.get_vertex(vertex).neighbors:
+                for u in self.get_vertex(vertex.id).neighbors:
                     #       S.push(w)
-                    stack.appendleft(u)
+                    stack.appendleft(u.id)
+        return visited
 
 
 # Challenge 3: Stretch Challenge
