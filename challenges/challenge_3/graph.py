@@ -103,25 +103,26 @@ class Graph:
         # Start with an arbitrary vertex v, mark v visited, add v to queue
         visited = {from_v: [from_v]}
         queue = deque(from_v)
-        # print("wtf is this: ", self.get_vertex(from_v))
         # For each vertex v in queue
         while len(queue) != 0:
             # Remove v from queue
             vertex_key = queue.popleft()
             # For each vertex u adjacent to v
-            for u in self.get_vertex(vertex_key).neighbors:
+            for neighbor in self.get_vertex(vertex_key).neighbors:
                 # If u has not been visited
-                if u not in visited:
+                if neighbor.id not in visited:
                     # Set parent of u to v, mark u visited, add u to queue
-                    visited[u] = visited[vertex_key] + [u]
-                    if u == to_u:
-                        return visited[u]
-                    queue.append(u)
+                    visited[neighbor.id] = visited[vertex_key] + [neighbor.id]
+                    if neighbor.id == to_u:
+                        return visited[neighbor.id]
+                    queue.append(neighbor.id)
         return None
+
 
 # Challenge 3
     # Depth-First Search
     # DFS(G, v)
+
     def r_depth_first_search(self, from_v, to_u, visited=None):
         """ Depth-frist search recursively """
     # label v as visited
@@ -130,7 +131,7 @@ class Graph:
         # for each edge from v to w:
         for u in self.get_vertex(from_v).neighbors:
             #     if vertex w is not visited
-            if u == to_u:
+            if u.id == to_u:
                 self.dfs_path = (visited)
                 return True
             else:

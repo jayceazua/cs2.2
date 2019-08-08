@@ -99,6 +99,8 @@ class Graph:
     # shortest_path
     def shortest_path(self, from_v, to_u):
         # Start with an arbitrary vertex v, mark v visited, add v to queue
+        print(from_v)
+        print(to_u)
         visited = {from_v: [from_v]}
         queue = deque(from_v)
         # print("wtf is this: ", self.get_vertex(from_v))
@@ -106,19 +108,17 @@ class Graph:
         while len(queue) != 0:
             # Remove v from queue
             vertex_key = queue.popleft()
+            print("Look here:", vertex_key)
             # For each vertex u adjacent to v
-            for u in self.get_vertex(vertex_key).neighbors:
+            for neighbor in self.get_vertex(vertex_key).neighbors:
                 # If u has not been visited
-                if u not in visited:
+                if neighbor.id not in visited:
                     # Set parent of u to v, mark u visited, add u to queue
-                    visited[u] = visited[vertex_key] + [u]
-                    if u == to_u:
-                        return visited[u]
-                    queue.append(u)
+                    visited[neighbor.id] = visited[vertex_key] + [neighbor.id]
+                    if neighbor.id == to_u:
+                        return visited[neighbor.id]
+                    queue.append(neighbor.id)
         return None
-    
-    
-    
 
 
 # Challenge 3
