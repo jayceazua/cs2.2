@@ -126,8 +126,6 @@ class Graph:
     def r_depth_first_search(self, from_v, to_u, visited=None):
         """ Depth-frist search recursively """
         # Need help debugging this...
-        print("From", from_v)
-        print("To", to_u)
     # label v as visited
         if visited == None:
             visited = {from_v}
@@ -142,10 +140,6 @@ class Graph:
                 #     recursively call DFS(G,w)
                 visited.add(u.id)
                 return self.r_depth_first_search(u.id, to_u, visited)
-
-
-  
-
 
 
     def i_depth_first_search(self, from_v, to_u):
